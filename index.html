@@ -1,0 +1,580 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Персональный сайт-визитка Вартазарянца Владислава Сергеевича - менеджера по продажам с 19-летним опытом">
+    <title>Вартазарянц Владислав Сергеевич - Территориальный менеджер по продажам</title>
+    
+    <!-- Favicon -->
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome для иконок -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        :root {
+            --primary-color: #2c3e50;
+            --secondary-color: #4a6fa5;
+            --accent-color: #3498db;
+            --light-gray: #f5f5f5;
+            --medium-gray: #e0e0e0;
+            --dark-gray: #7f8c8d;
+            --text-color: #333;
+            --white: #ffffff;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            transition: all 0.3s ease;
+        }
+        
+        body {
+            font-family: 'Roboto', sans-serif;
+            line-height: 1.6;
+            color: var(--text-color);
+            background-color: var(--light-gray);
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 40px;
+            padding-bottom: 20px;
+            border-bottom: 1px solid var(--medium-gray);
+            background-color: var(--white);
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        
+        .photo {
+            width: 180px;
+            height: 180px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-right: 40px;
+            border: 5px solid var(--secondary-color);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+        
+        h1, h2, h3 {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 700;
+        }
+        
+        h1 {
+            color: var(--primary-color);
+            margin-bottom: 10px;
+            font-size: 2.2rem;
+        }
+        
+        .position {
+            font-size: 1.3rem;
+            color: var(--secondary-color);
+            font-weight: 600;
+            margin-bottom: 15px;
+        }
+        
+        .contact-info {
+            margin-bottom: 30px;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+        
+        .contact-info p {
+            margin: 0;
+            display: flex;
+            align-items: center;
+        }
+        
+        .contact-info i {
+            margin-right: 8px;
+            color: var(--secondary-color);
+            width: 20px;
+            text-align: center;
+        }
+        
+        section {
+            margin-bottom: 40px;
+            background: var(--white);
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        
+        h2 {
+            color: var(--secondary-color);
+            border-bottom: 2px solid var(--medium-gray);
+            padding-bottom: 10px;
+            margin-top: 0;
+            margin-bottom: 20px;
+            font-size: 1.8rem;
+            display: flex;
+            align-items: center;
+        }
+        
+        h2 i {
+            margin-right: 15px;
+        }
+        
+        .job {
+            margin-bottom: 30px;
+            padding-bottom: 20px;
+            border-bottom: 1px dashed var(--medium-gray);
+        }
+        
+        .job:last-child {
+            border-bottom: none;
+            margin-bottom: 0;
+            padding-bottom: 0;
+        }
+        
+        .job-title {
+            font-weight: 600;
+            color: var(--primary-color);
+            font-size: 1.2rem;
+            margin-bottom: 5px;
+        }
+        
+        .company {
+            font-weight: 600;
+            font-size: 1.1rem;
+            margin-bottom: 5px;
+            color: var(--secondary-color);
+        }
+        
+        .period {
+            color: var(--dark-gray);
+            font-style: italic;
+            margin-bottom: 10px;
+            display: block;
+        }
+        
+        ul {
+            padding-left: 25px;
+            margin-top: 10px;
+        }
+        
+        li {
+            margin-bottom: 8px;
+            position: relative;
+        }
+        
+        li:before {
+            content: "•";
+            color: var(--secondary-color);
+            font-weight: bold;
+            display: inline-block;
+            width: 1em;
+            margin-left: -1em;
+            position: absolute;
+            left: 0;
+        }
+        
+        .skills {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+        
+        .skill {
+            background: var(--light-gray);
+            padding: 8px 15px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            color: var(--primary-color);
+            border: 1px solid var(--medium-gray);
+        }
+        
+        .skill:hover {
+            background: var(--secondary-color);
+            color: white;
+            transform: translateY(-2px);
+            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+        }
+        
+        a {
+            color: var(--secondary-color);
+            text-decoration: none;
+            font-weight: 500;
+        }
+        
+        a:hover {
+            color: var(--primary-color);
+            text-decoration: underline;
+        }
+        
+        .btn {
+            display: inline-block;
+            background: var(--secondary-color);
+            color: white;
+            padding: 10px 20px;
+            border-radius: 5px;
+            margin-top: 10px;
+            font-weight: 500;
+        }
+        
+        .btn:hover {
+            background: var(--primary-color);
+            text-decoration: none;
+            transform: translateY(-2px);
+            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+        }
+        
+        footer {
+            text-align: center;
+            padding: 20px;
+            color: var(--dark-gray);
+            font-size: 0.9rem;
+            margin-top: 40px;
+            border-top: 1px solid var(--medium-gray);
+        }
+        
+        /* Анимации */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        section {
+            animation: fadeIn 0.6s ease-out forwards;
+        }
+        
+        section:nth-child(2) { animation-delay: 0.1s; }
+        section:nth-child(3) { animation-delay: 0.2s; }
+        section:nth-child(4) { animation-delay: 0.3s; }
+        section:nth-child(5) { animation-delay: 0.4s; }
+        section:nth-child(6) { animation-delay: 0.5s; }
+        section:nth-child(7) { animation-delay: 0.6s; }
+        
+        /* Адаптивность */
+        @media (max-width: 768px) {
+            header {
+                flex-direction: column;
+                text-align: center;
+                padding: 20px;
+            }
+            
+            .photo {
+                margin-right: 0;
+                margin-bottom: 20px;
+                width: 150px;
+                height: 150px;
+            }
+            
+            h1 {
+                font-size: 1.8rem;
+            }
+            
+            .position {
+                font-size: 1.1rem;
+            }
+            
+            section {
+                padding: 20px;
+            }
+            
+            .contact-info {
+                flex-direction: column;
+                gap: 10px;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            body {
+                padding: 10px;
+            }
+            
+            h1 {
+                font-size: 1.5rem;
+            }
+            
+            h2 {
+                font-size: 1.4rem;
+            }
+            
+            .job-title {
+                font-size: 1.1rem;
+            }
+            
+            .company {
+                font-size: 1rem;
+            }
+        }
+        
+        /* Темная тема */
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --primary-color: #ecf0f1;
+                --secondary-color: #3498db;
+                --text-color: #ecf0f1;
+                --light-gray: #2c3e50;
+                --medium-gray: #34495e;
+                --dark-gray: #bdc3c7;
+                --white: #34495e;
+            }
+            
+            body {
+                background-color: #2c3e50;
+            }
+            
+            .skill {
+                background: #2c3e50;
+                border-color: #34495e;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <img src="photo.jpg" alt="Фото Вартазарянца Владислава Сергеевича" class="photo">
+        <div>
+            <h1>Вартазарянц Владислав Сергеевич</h1>
+            <div class="position">Территориальный менеджер по продажам</div>
+            <div><i class="fas fa-user"></i> Мужчина, 44 года, родился 3 сентября 1980</div>
+        </div>
+    </header>
+
+    <section>
+        <h2><i class="fas fa-id-card"></i> Контактная информация</h2>
+        <div class="contact-info">
+            <p><i class="fas fa-phone"></i> <strong>Телефон:</strong> <a href="tel:+79370825328">+7 (937) 0825328</a></p>
+            <p><i class="fas fa-envelope"></i> <strong>Email:</strong> <a href="mailto:vartazar80@yandex.ru">vartazar80@yandex.ru</a> (предпочитаемый способ связи)</p>
+            <p><i class="fas fa-map-marker-alt"></i> <strong>Проживает:</strong> Волгоград</p>
+            <p><i class="fas fa-passport"></i> <strong>Гражданство:</strong> Россия, есть разрешение на работу: Россия</p>
+            <p><i class="fas fa-suitcase"></i> <strong>Готовность к переезду:</strong> Не готов к переезду, готов к командировкам</p>
+        </div>
+    </section>
+
+    <section>
+        <h2><i class="fas fa-briefcase"></i> Желаемая должность</h2>
+        <p class="job-title">Территориальный менеджер по продажам</p>
+        <p><strong>Желаемая зарплата:</strong> 120 000 ₽</p>
+        
+        <h3 style="margin-top: 20px; margin-bottom: 10px;">Специализации:</h3>
+        <ul>
+            <li>Комплаенс-менеджер</li>
+            <li>Менеджер по закупкам</li>
+            <li>Менеджер по продажам</li>
+            <li>Менеджер по работе с клиентами</li>
+            <li>Менеджер по работе с партнерами</li>
+            <li>Руководитель отдела продаж</li>
+        </ul>
+        
+        <h3 style="margin-top: 20px; margin-bottom: 10px;">Условия работы:</h3>
+        <p><strong>Занятость:</strong> полная занятость, частичная занятость, волонтерство</p>
+        <p><strong>График работы:</strong> полный день, сменный график, гибкий график, удаленная работа</p>
+        <p><strong>Желательное время в пути до работы:</strong> не более часа</p>
+    </section>
+
+    <section>
+        <h2><i class="fas fa-building"></i> Опыт работы <small>(19 лет 4 месяца)</small></h2>
+        
+        <div class="job">
+            <div class="job-title">Менеджер по продажам</div>
+            <div class="company">ООО «Биопром» (bioprom.su)</div>
+            <div class="period">Сентябрь 2020 — настоящее время (4 года 10 месяцев)</div>
+            <ul>
+                <li>Увеличил клиентскую базу на 20% за 2 года за счет активного поиска и привлечения новых партнеров.</li>
+                <li>Контролировал дебиторскую задолженность, сократив просроченные платежи на 20%.</li>
+                <li>Организовывал логистику «до двери» для ключевых клиентов, оптимизировав сроки доставки.</li>
+                <li>Регулярно выполнял и перевыполнял планы продаж.</li>
+            </ul>
+        </div>
+        
+        <div class="job">
+            <div class="job-title">Менеджер по логистике</div>
+            <div class="company">ТД МеталлСтройКомплект (Волгоград, tdmsk.ru)</div>
+            <div class="period">Сентябрь 2016 — Сентябрь 2020 (4 года 1 месяц)</div>
+            <ul>
+                <li>Оптимизировал затраты на транспортные перевозки, сократив бюджет на 15%.</li>
+                <li>Заключал договоры с перевозчиками, контролировал выполнение условий.</li>
+                <li>Координировал погрузку, доставку и разгрузку товаров, обеспечивая сохранность грузов.</li>
+            </ul>
+        </div>
+        
+        <div class="job">
+            <div class="job-title">Менеджер (Управляющий)</div>
+            <div class="company">Столия, Группа Компаний (Волгоград, www.stoliya.ru)</div>
+            <div class="period">Август 2015 — Сентябрь 2016 (1 год 2 месяца)</div>
+            <ul>
+                <li>В команде запускал ресторан-кофейню «Гранд Кафе» на проспекте Ленина,93 г.Волгоград.</li>
+                <li>Предоставление отчетности руководству.</li>
+                <li>Подбор и обучение персонала.</li>
+                <li>Контроль текущей деятельности.</li>
+                <li>Взаимодействие с центральным офисом Группы Компаний.</li>
+                <li>Соблюдение стандартов сервиса и качества.</li>
+                <li>Работа по улучшению финансовых показателей.</li>
+                <li>Общение с контролирующими и проверяющими органами.</li>
+                <li>Разрешение конфликтов внутри команды или коллектива.</li>
+            </ul>
+        </div>
+        
+        <div class="job">
+            <div class="job-title">Исполняющий обязанности генерального управляющего</div>
+            <div class="company">ООО "Пицца" рестораны "Пицца Экспресс" и "Зю кафе" (Москва)</div>
+            <div class="period">Март 2014 — Сентябрь 2014 (7 месяцев)</div>
+            <ul>
+                <li>Выполнение финансовых планов продаж.</li>
+                <li>Управление и контроль операционной деятельности ресторанов.</li>
+                <li>Работа по взаимодействию со структурными подразделениями холдинга.</li>
+                <li>Работа с контролирующими и проверяющими органами.</li>
+                <li>Работа с управляющими компаниями и владельцами арендуемых помещений.</li>
+                <li>Работа с поставщиками продуктов и услуг.</li>
+            </ul>
+        </div>
+        
+        <div class="job">
+            <div class="job-title">Управляющий рестораном</div>
+            <div class="company">Ресторанный трест. Рестораны "Пицца экспресс" и "Зю кафе" (Москва, pizzaexpress.ru.com)</div>
+            <div class="period">Сентябрь 2010 — Март 2014 (3 года 7 месяцев)</div>
+            <ul>
+                <li>В команде запускал сеть ресторанов "Пицца Экспресс".</li>
+                <li>2011г. март - открытие первого ресторана сети "Пицца экспресс" в ТЦ "Капитолий".</li>
+                <li>2011г. май - с разницей в десять дней открываем два ресторана "Пицца экспресс".</li>
+                <li>Взаимодействие со строительно-эксплуатационной службой холдинга.</li>
+                <li>Взаимодействие с гос.органами и эксплуатационными службами собственников арендуемых помещений.</li>
+                <li>Заключение договоров с поставщиками.</li>
+                <li>Участие в создании меню. Работа с маркетинговым отделом.</li>
+                <li>Подбор и обучение персонала.</li>
+                <li>Запуск и наладка работы всех подразделений ресторана.</li>
+                <li>Обеспечение бесперебойной работы ресторана.</li>
+                <li>Контроль стандартов сервиса и работа по улучшению.</li>
+                <li>Оптимизация затратной части ресторана (ФОТ, закупки, расходы).</li>
+                <li>Предоставление отчётности руководству.</li>
+                <li>Разрешение конфликтов внутри команды или коллектива.</li>
+            </ul>
+        </div>
+        
+        <div class="job">
+            <div class="job-title">Менеджер по продажам</div>
+            <div class="company">ООО "Армянский коньяк" (Москва, ar-co.ru)</div>
+            <div class="period">Октябрь 2008 — Сентябрь 2010 (2 года)</div>
+            <ul>
+                <li>Развивал базу клиентов среди ресторанов и баров Москвы.</li>
+                <li>Контролировал выполнение планов продаж и дебиторскую задолженность.</li>
+            </ul>
+        </div>
+        
+        <div class="job">
+            <div class="job-title">Менеджер по продажам</div>
+            <div class="company">ООО "Бибендум" кофе "Молинари" (Москва, bibendumco.ru)</div>
+            <div class="period">Май 2007 — Октябрь 2008 (1 год 6 месяцев)</div>
+            <ul>
+                <li>Поставки кофе, чая и оборудования в сегмент HoReCa Москвы и Московской области.</li>
+                <li>Сдача в аренду, продажа оборудования.</li>
+                <li>Развитие клиентской базы.</li>
+                <li>Работа с имевшейся базой.</li>
+                <li>Работа с дебиторской задолженностью.</li>
+                <li>Выполнение планов продаж.</li>
+                <li>Участие в выставках.</li>
+            </ul>
+        </div>
+        
+        <div class="job">
+            <div class="job-title">Бар-менеджер</div>
+            <div class="company">ООО "Пицца экспресс лимитед" (Москва)</div>
+            <div class="period">Май 2005 — Май 2007 (2 года 1 месяц)</div>
+            <ul>
+                <li>Бар-менеджер ресторанов "Френч кафе", "Восточная комната", "Пицца экспресс", "Дим Сам".</li>
+                <li>Организация и контроль работы баров.</li>
+                <li>Проведение ежемесячных инвентаризаций.</li>
+                <li>Заказ алкогольной, безалкогольной и сопутствующей продукции.</li>
+                <li>Введение новых позиций.</li>
+                <li>Анализ продаж.</li>
+                <li>Переговоры с поставщиками.</li>
+                <li>Подбор и обучение персонала, составление графика работы.</li>
+            </ul>
+        </div>
+    </section>
+
+    <section>
+        <h2><i class="fas fa-graduation-cap"></i> Образование</h2>
+        <div class="job">
+            <div class="company">Московский авиационный институт (национальный исследовательский университет), Москва</div>
+            <div>Инженерно-экономический институт МАИ (ИНЖЭКИН МАИ), Организация предпринимательской деятельности</div>
+            <div class="period">2005</div>
+        </div>
+    </section>
+
+    <section>
+        <h2><i class="fas fa-certificate"></i> Повышение квалификации, курсы</h2>
+        <ul>
+            <li><strong>2020:</strong> Rutgers the State University of New Jersey, Coursera, Supply Chain Logistic</li>
+            <li><strong>2020:</strong> ФГАОУ ДПО "Волгоградский ЦППК", Специалист Безопасности Дорожного Движения</li>
+            <li><strong>2020:</strong> ФГАОУ ДПО "Волгоградский ЦППК", Контролер технического состояния транспортных средств</li>
+            <li><strong>2020:</strong> Rutgers the State University of New Jersey, Coursera, Supply Chain Operations</li>
+            <li><strong>2020:</strong> САНКТ-ПЕТЕРБУРГСКИЙ ПОЛИТЕХНИЧЕСКИЙ УНИВЕРСИТЕТ ПЕТРА ВЕЛИКОГО, Логистика</li>
+        </ul>
+    </section>
+
+    <section>
+        <h2><i class="fas fa-code-branch"></i> Навыки</h2>
+        <div class="skills">
+            <span class="skill">Аналитический склад ума</span>
+            <span class="skill">Коммуникабельность</span>
+            <span class="skill">Стрессоустойчивость</span>
+            <span class="skill">R-Keeper</span>
+            <span class="skill">Разговорный английский язык</span>
+            <span class="skill">Работа с АТИ</span>
+            <span class="skill">Работа с 1С</span>
+            <span class="skill">Управление персоналом</span>
+            <span class="skill">Транспортная логистика</span>
+            <span class="skill">Ресторанный менеджмент</span>
+            <span class="skill">Обучение персонала</span>
+            <span class="skill">Автомобильные грузоперевозки</span>
+            <span class="skill">Закупка товаров и услуг</span>
+            <span class="skill">Контроль дебиторской задолженности</span>
+            <span class="skill">Документооборот</span>
+            <span class="skill">Работа на выставках</span>
+            <span class="skill">Автомобильные перевозки</span>
+            <span class="skill">Взаимодействие с контрольными органами</span>
+            <span class="skill">Работа с поставщиками</span>
+            <span class="skill">Руководство коллективом</span>
+            <span class="skill">Управление командой</span>
+            <span class="skill">1С: Предприятие</span>
+            <span class="skill">Стандарты гостеприимства</span>
+            <span class="skill">Управление затратами</span>
+            <span class="skill">Управление отношениями с клиентами</span>
+            <span class="skill">Мотивация персонала</span>
+            <span class="skill">FMCG Продажи</span>
+            <span class="skill">HoReCa</span>
+            <span class="skill">Работа с дебиторской задолженностью</span>
+            <span class="skill">Оптимизация закупок</span>
+        </div>
+    </section>
+
+    <section>
+        <h2><i class="fas fa-info-circle"></i> Дополнительная информация</h2>
+        <p><strong><i class="fas fa-language"></i> Языки:</strong> Русский (родной), Английский (B1 - Средний)</p>
+        <p><strong><i class="fas fa-car"></i> Водительские права:</strong> Категория B, личный автомобиль</p>
+        
+        <h3 style="margin-top: 20px; margin-bottom: 10px;"><i class="fas fa-user-tie"></i> О себе:</h3>
+        <p>Ответственный, стрессоустойчивый, легко нахожу общий язык с клиентами и коллегами. Веду активный образ жизни, интересуюсь историей, экономикой и управлением.</p>
+        
+        <h3 style="margin-top: 20px; margin-bottom: 10px;"><i class="fas fa-star"></i> Рекомендации:</h3>
+        <p>Доступны по запросу (контакты руководителей из ООО «Биопром», «Пицца Экспресс»).</p>
+        
+        <a href="#" class="btn"><i class="fas fa-download"></i> Скачать резюме (PDF)</a>
+    </section>
+
+    <footer>
+        <p>© 2023 Вартазарянц Владислав Сергеевич</p>
+        <p>Последнее обновление: июнь 2023</p>
+    </footer>
+</body>
+</html>
